@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    ## driver-class-name: org.postgresql.Driver
+    username: uatuser
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  session:
+    store-type: jdbc
+    jdbc:
+      initialize-schema: always   # auto-create SPRING_SESSION tables (dev/test)
+
+  security:
+    user:
+      name: admin
+      password: admin
+      roles: USER
