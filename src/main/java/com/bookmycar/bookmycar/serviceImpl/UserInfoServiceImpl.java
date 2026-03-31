@@ -13,7 +13,7 @@ public class UserInfoServiceImpl implements com.bookmycar.bookmycar.service.User
 private  final com.bookmycar.bookmycar.repository.UserInfoRepository userInfoRepository;
     @Override
     public void createUser(UserInfoRequest userRequest) {
-        // TODO Auto-generated method stub
+
         if(userInfoRepository.findByEmail(userRequest.getEmail())==null){
             UserInfo userInfo = new UserInfo();
             userInfo.setName(userRequest.getName());
