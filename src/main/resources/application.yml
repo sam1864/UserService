@@ -2,6 +2,17 @@ server:
   port: 8080
 
 spring:
+  logging:
+    level:
+      root: INFO
+      org.springframework: INFO
+      org.springframework.amqp: DEBUG   # 👈 ADD THIS
+      com.example: DEBUG
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
     ## driver-class-name: org.postgresql.Driver
