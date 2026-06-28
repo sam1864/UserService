@@ -7,16 +7,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class UserInfoRequest {
-
-    private String name;
-
-    private String contact;
+public class LoginRequest {
 
     private String email;
 
     private String password;
-
-    private boolean isVerified;
-
 }

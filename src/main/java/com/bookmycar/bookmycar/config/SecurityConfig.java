@@ -15,25 +15,8 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(csrf -> csrf.disable())
-
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(
-                                "/",
-                                "/swagger-ui/**",
-                                "/v3/api-docs/**",
-                                "/login/**",
-                                "/oauth2/**",
-                                "/createUsers"   // 👈 allow without login
-                        ).permitAll()
-                        .anyRequest().authenticated()
-                )
-
-                .oauth2Login(oauth -> oauth
-                        .userInfoEndpoint(userInfo -> userInfo
-                                .userAuthoritiesMapper(authorities ->
-                                        Set.of(new SimpleGrantedAuthority("ROLE_USER"))
-                                )
-                        )
+                        .anyRequest().permitAll()
                 );
 
         return http.build();

@@ -27,4 +27,7 @@ public class UserInfo {
 
     @Column(name="contact")
     private String contact;
+
+    @Column(name="is_verified")
+    private boolean isVerified;
 }
